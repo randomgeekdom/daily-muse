@@ -1,0 +1,38 @@
+@font-face {
+  font-family: scripting;
+  src: url(../assets/Salonica-Wym59.ttf) format("truetype");
+}
+
+h1{
+  font-family: 'scripting', 'arial', sans-serif;
+  font-size: 700%;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+p{
+  font-family: 'scripting', 'arial', sans-serif;
+  font-size: 400%;
+}
+
+.main-page{
+  margin: 45px;
+  text-align: center;
+}
+
+textarea{
+  width: 75%;
+  max-width: 100%;
+  border-width: 2px;
+  border-radius: 15%;
+  border-style: dashed;
+  border-color: rgb(173, 173, 58);
+  padding: 5px;
+  text-align: center;
+  outline: none;
+  font-family: 'atropos', 'arial', sans-serif;
+}
+
+textarea::placeholder {
+  opacity: 40%;
+}

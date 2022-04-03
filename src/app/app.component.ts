@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'daily-muse';
+  workType = "sonnet";
+  subject = "a dragon";
+  situation = "in a cave";
+
+  public get placeholder(){
+    return 'Write your ' + this.workType + ' here';
+  }
+
+  public get prompt(){
+    return `Today I will write a ${this.workType} about ${this.subject} ${this.situation}`;
+  }
 }
