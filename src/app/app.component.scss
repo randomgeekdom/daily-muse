@@ -3,6 +3,16 @@
   src: url(../assets/Salonica-Wym59.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: prompty;
+  src: url(../assets/HaeresletterRegular-3zm96.otf) format("opentype");
+}
+
+@font-face {
+  font-family: newsy;
+  src: url(../assets/RondalRegular-K7ORW.otf) format("opentype");
+}
+
 h1{
   font-family: 'scripting', 'arial', sans-serif;
   font-size: 700%;
@@ -11,8 +21,16 @@ h1{
 }
 
 p{
+  font-family: 'prompty', sans-serif;
+  font-size: xx-large;
+}
+
+h3{
   font-family: 'scripting', 'arial', sans-serif;
+  font-weight: normal;
   font-size: 400%;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .main-page{
@@ -30,7 +48,8 @@ textarea{
   padding: 5px;
   text-align: center;
   outline: none;
-  font-family: 'atropos', 'arial', sans-serif;
+  font-family: 'newsy', 'arial', sans-serif;
+  font-size:larger;
 }
 
 textarea::placeholder {

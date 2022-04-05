@@ -6,15 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  workType = "sonnet";
+  workType = "a sonnet";
   subject = "a dragon";
   situation = "in a cave";
 
+  workType2 = "a haiku";
+  subject2 = "a man";
+  situation2 = "who is lost";
+
   public get placeholder(){
-    return 'Write your ' + this.workType + ' here';
+    return 'You can do this';
   }
 
   public get prompt(){
-    return `Today I will write a ${this.workType} about ${this.subject} ${this.situation}`;
+    return `${this.workType} about ${this.subject} ${this.situation}`;
+  }
+
+  public get prompt2(){
+    return `${this.workType2} about ${this.subject2} ${this.situation2}`;
   }
 }
