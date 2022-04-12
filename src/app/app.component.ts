@@ -1,28 +1,46 @@
 import { Component } from '@angular/core';
+import Prompts from './models/Prompts';
+import PromptGeneratorService from './services/prompt-generator.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  workType = "a sonnet";
-  subject = "a dragon";
-  situation = "in a cave";
+  constructor(private promptGenerator: PromptGeneratorService) {
+    var prompts = localStorage.getItem('prompts');
+    if (!!prompts) {
+      this.prompts = JSON.parse(prompts);
+      if (
+        this.prompts.PromptDate == new Date().toDateString()
+      ) {
+        return;
+      }
+    }
 
-  workType2 = "a haiku";
-  subject2 = "a man";
-  situation2 = "who is lost";
+    this.prompts = promptGenerator.Generate();
+    localStorage.setItem('prompts', JSON.stringify(this.prompts));
+  }
 
-  public get placeholder(){
+  prompts = new Prompts();
+
+  public get placeholder() {
     return 'You can do this';
   }
 
-  public get prompt(){
-    return `${this.workType} about ${this.subject} ${this.situation}`;
+  public getPrompt(workType: string, subject: string, situation: string){
+    return `${workType} about ${subject} ${situation}`;
   }
 
-  public get prompt2(){
-    return `${this.workType2} about ${this.subject2} ${this.situation2}`;
+  public get prompt1(): string {
+    return this.getPrompt(this.prompts.WorkType1, this.prompts.Subject1, this.prompts.Situation1);
+  }
+
+  public get prompt2(): string {
+    return this.getPrompt(this.prompts.WorkType2, this.prompts.Subject2, this.prompts.Situation2);
+  }
+  public GeneratePrompts(): void {
+    this.prompts = this.promptGenerator.Generate();
   }
 }
