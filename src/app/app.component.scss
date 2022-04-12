@@ -42,9 +42,9 @@ textarea{
   width: 75%;
   max-width: 100%;
   border-width: 2px;
-  border-radius: 15%;
+  // border-radius: 15%;
   border-style: dashed;
-  border-color: rgb(173, 173, 58);
+  border-color: rgb(200, 200, 158);
   padding: 5px;
   text-align: center;
   outline: none;
@@ -55,3 +55,35 @@ textarea{
 textarea::placeholder {
   opacity: 40%;
 }
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+// textarea::-webkit-scrollbar {
+//   width: 1em;
+// }
+
+// textarea::-webkit-scrollbar-track {
+//   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+// }
+
+// textarea::-webkit-scrollbar-thumb {
+//   background-color: darkgrey;
+//   outline: 1px solid slategrey;
+// }
+
+// textarea::-webkit-resizer addresses {
+//   opacity: 0;
+
+// }
